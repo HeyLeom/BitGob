@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     public function index(){
-        return view('Posts.index');
+
+        $post = Post::get();
+        return view('Posts.index', compact('post'));
     }
 
     public function create(){
@@ -20,6 +22,8 @@ class PostsController extends Controller
             'titulo'=> request('titulo'),
             'cuerpo' => request('cuerpo'),
         ]);
+
+        return redirect()->route('post.index');
 
     }
 }

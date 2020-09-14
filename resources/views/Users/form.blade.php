@@ -6,12 +6,17 @@
 <form method="POST" action="{{ route('user.store')}}">
     @csrf
     <label>
-        Email <br>
+        Name: <br>
+    <input type="text" name="name">
+    </label>
+    <br>
+    <label>
+        Email: <br>
     <input type="email" name="email">
     </label>
     <br>
     <label>
-        Password <br>
+        Password: <br>
         <input type="password" name="password">
     </label>
     <br>

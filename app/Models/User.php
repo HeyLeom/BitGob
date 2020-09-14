@@ -17,8 +17,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password',
+        'name','email', 'password',
     ];
+
+    public function images()
+	{
+		return $this->hasMany('Images', 'user_id');
+	}
 
     /**
      * The attributes that should be hidden for arrays.

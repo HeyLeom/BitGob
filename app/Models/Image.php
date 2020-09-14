@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+    protected $fillable = [
+        'url', 'user_id',
+    ];
     use HasFactory;
+
+    public function users()
+	{
+		return $this->belongsTo('Users', 'id');
+	}
 }

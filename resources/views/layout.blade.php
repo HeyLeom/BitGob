@@ -11,7 +11,7 @@
 
     <nav>
         <ul>
-            <li ><a href="/pruebaBitGob/public">Home</a></li>
+            <li ><a href="/pruebaBitGob/public/users">Home</a></li>
             <li ><a href="/pruebaBitGob/public/users/">Usuarios</a></li>
             <li ><a href="/pruebaBitGob/public/posts">Posts</a></li>
             <li ><a href="/pruebaBitGob/public/users/create">Crear Usuario</a></li>

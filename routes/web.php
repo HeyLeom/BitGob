@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ImagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,9 @@ Route::get('users/create',[UsersController::class, 'create'])->name('user.create
 
 Route::post('users',[UsersController::class, 'store'])->name('user.store');
 
-Route::get('users/{id}/edit',[UsersController::class, 'edit'])->name('user.edit');
+Route::get('users/{usuario}/addPhoto',[UsersController::class, 'addPhoto'])->name('user.addPhoto');
+
+Route::post('users/uploadImage',[ImagesController::class, 'store'])->name('image.store');
 
 Route::get('posts',[PostsController::class, 'index'])->name('post.index');
 
