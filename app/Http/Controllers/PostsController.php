@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\ImagePost;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -10,7 +12,8 @@ class PostsController extends Controller
     public function index(){
         $usuario = User::get();
         $post = Post::get();
-        return view('Posts.index', compact('post','usuario'));
+        $imagen = ImagePost::get();
+        return view('Posts.index', compact('post','usuario','imagen'));
     }
 
     public function create(){
@@ -28,5 +31,11 @@ class PostsController extends Controller
 
         return redirect()->route('post.index');
 
+    }
+
+    public function addPhoto (Post $post){
+        return view('Posts.photoForm', [
+        'post' => $post
+        ]);
     }
 }

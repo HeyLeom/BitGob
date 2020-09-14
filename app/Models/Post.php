@@ -15,5 +15,10 @@ class Post extends Model
     public function users()
 	{
 		return $this->belongsTo('Users', 'id');
-	}
+    }
+
+    public function imagesPost()
+	{
+		return $this->hasMany('ImagesPost', 'post_id');
+    }
 }

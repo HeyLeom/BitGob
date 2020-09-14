@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Image;
+use App\Models\ImagePost;
 use Illuminate\Http\Request;
 
 class ImagesController extends Controller
@@ -16,4 +17,6 @@ class ImagesController extends Controller
         return redirect()->route('user.index');
 
     }
+
+
 }

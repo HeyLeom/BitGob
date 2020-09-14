@@ -3,6 +3,7 @@
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\ImagesPostsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,7 @@ Route::get('posts',[PostsController::class, 'index'])->name('post.index');
 Route::get('posts/create',[PostsController::class, 'create'])->name('post.create');
 
 Route::post('posts',[PostsController::class, 'store'])->name('post.store');
+
+Route::get('posts/{post}/addPhoto',[PostsController::class, 'addPhoto'])->name('post.addPhoto');
+
+Route::post('posts/uploadImage',[ImagesPostsController::class, 'storePost'])->name('imagePost.store');
