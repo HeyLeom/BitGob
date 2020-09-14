@@ -39,3 +39,7 @@ Route::post('posts',[PostsController::class, 'store'])->name('post.store');
 Route::get('posts/{post}/addPhoto',[PostsController::class, 'addPhoto'])->name('post.addPhoto');
 
 Route::post('posts/uploadImage',[ImagesPostsController::class, 'storePost'])->name('imagePost.store');
+
+Route::get('posts/{post}/edit',[PostsController::class, 'edit'])->name('post.edit');
+
+Route::patch('posts/{post}',[PostsController::class, 'update'])->name('post.update');

@@ -7,7 +7,7 @@
 
 
     @forelse ($post as $postItem)
-            <li>Titutlo: {{$postItem->titulo}}</li>
+            <li>Titutlo: {{$postItem->titulo}} <a href="{{ route('post.edit',$postItem)}}">Editar</a></li>
             <p>Cuerpo: {{ $postItem->cuerpo }}</p>
             @foreach($usuario as $usuarioItem)
             @if($usuarioItem->id == $postItem->user_id)

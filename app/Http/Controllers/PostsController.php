@@ -38,4 +38,20 @@ class PostsController extends Controller
         'post' => $post
         ]);
     }
+
+    public function edit (Post $post){
+        return view('Posts.edit', [
+        'post' => $post
+        ]);
+    }
+
+    public function update(Post $post){
+        $post->update([
+            'titulo'=> request('titulo'),
+            'cuerpo'=> request('cuerpo'),
+            'user_id'=> request('user_id'),
+        ]);
+
+        return redirect()->route('post.index');
+    }
 }
