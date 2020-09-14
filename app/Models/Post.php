@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $fillable = [
-        'titulo', 'cuerpo',
+        'titulo', 'cuerpo', 'user_id',
     ];
     use HasFactory;
+
+    public function users()
+	{
+		return $this->belongsTo('Users', 'id');
+	}
 }

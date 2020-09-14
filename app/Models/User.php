@@ -23,6 +23,11 @@ class User extends Authenticatable
     public function images()
 	{
 		return $this->hasMany('Images', 'user_id');
+    }
+
+    public function posts()
+	{
+		return $this->hasMany('Posts', 'user_id');
 	}
 
     /**

@@ -6,6 +6,18 @@
 <form method="POST" action="{{ route('post.store')}}">
     @csrf
     <label>
+        Usuario: <br>
+         <select name="user_id">
+            @forelse ($usuario as $usuarioItem)
+                <option value="{{$usuarioItem->id}}">{{$usuarioItem->email}}</option>
+            @empty
+
+            @endforelse
+
+        </select>
+    </label>
+    <br>
+    <label>
         Titulo <br>
     <input type="text" name="titulo">
     </label>
